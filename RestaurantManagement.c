@@ -66,13 +66,11 @@ struct node *createadmin(struct node*head,int data, char foodname[25],float pric
 
 struct node*createcustomer(struct node*head,int data,int quantity){
     newnode=(struct node*)malloc(sizeof(struct node));
-    //we use (struct node*) in the memory allocation because malloc returns 
-    //a generic void pointer,and we need to treat the allocated memory as a struct node
     struct node*temp1=heada;
     int flag=0;
     while(temp1!=NULL){
         if(temp1->data==data){
-            flag=1;//this flag is used to indicate whether the item is found in the menu
+            flag=1;
             break;
         }
         temp1=temp1->next;
